@@ -1,7 +1,7 @@
 About cloudant
 ==============
 
-Home: https://github.com/cloudant-labs/cloudant
+Home: https://cloudant-labs.github.io/cloudant-python/
 
 Package license: MIT
 

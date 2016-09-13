@@ -1,8 +1,9 @@
 {%set name = "cloudant" %}
-{%set version = "0.5.9" %}
+{%set version = "0.5.10" %}
 {%set compress_type = "tar.gz" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "2ef6e911f320f9d0ed48f045e7eaef0a614cf35fd314ad9a25ec689eee53ea85" %}
+{%set hash_val = "ed79234cd796c777a10ebf02287af3deb8739c594e66a1d012a2955161942b31" %}
+{%set build_num = "0"%}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +16,7 @@ source:
 
 build:
   skip: True  # [py3k]
-  number: 0
+  number: {{ build_num }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 
@@ -33,10 +34,12 @@ test:
     - cloudant
 
 about:
-  home: https://github.com/cloudant-labs/cloudant
+  home: https://cloudant-labs.github.io/cloudant-python/
   license: MIT
+  # license_file: No MANIFEST.in or LICENSE
   license_family: MIT
   summary: 'Asynchronous Cloudant / CouchDB Interface'
+  dev_url: https://github.com/cloudant-labs/cloudant
 
 extra:
   recipe-maintainers:
