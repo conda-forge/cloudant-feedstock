@@ -1,21 +1,21 @@
-{%set name = "cloudant" %}
-{%set version = "2.5.0" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "a89b029777747c0fa6e1fc96efd5452feefae11cee7e3c310784a670f519f9ba" %}
-{%set build_num = "0"%}
+{% set name = "cloudant" %}
+{% set version = "2.5.0" %}
+{% set bundle = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash = "a89b029777747c0fa6e1fc96efd5452feefae11cee7e3c310784a670f519f9ba" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ compress_type }}
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ compress_type }}
-  {{ hash_type }}: {{ hash_val }}
+  fn: {{ name }}-{{ version }}.{{ bundle }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
+  {{ hash_type }}: {{ hash }}
 
 build:
-  number: {{ build_num }}
+  number: {{ build }}
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 
@@ -35,7 +35,7 @@ test:
 about:
   home: https://github.com/cloudant/python-cloudant
   license: Apache 2.0
-  # license_file: LICENSE not in MANIFEST.in
+  license_file: {{ RECIPE_DIR }}/LICENSE
   license_family: Apache
   summary: 'Asynchronous Cloudant / CouchDB Interface'
   dev_url: https://github.com/cloudant/python-cloudant
