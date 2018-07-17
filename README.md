@@ -14,12 +14,15 @@ Summary: Asynchronous Cloudant / CouchDB Interface
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/cloudant-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/cloudant-feedstock)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/cloudant-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/cloudant-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/cloudant/badges/version.svg)](https://anaconda.org/conda-forge/cloudant)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/cloudant/badges/downloads.svg)](https://anaconda.org/conda-forge/cloudant)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-cloudant-green.svg)](https://anaconda.org/conda-forge/cloudant) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/cloudant.svg)](https://anaconda.org/conda-forge/cloudant) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/cloudant.svg)](https://anaconda.org/conda-forge/cloudant) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/cloudant.svg)](https://anaconda.org/conda-forge/cloudant) |
 
 Installing cloudant
 ===================
