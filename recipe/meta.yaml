@@ -1,8 +1,8 @@
 {% set name = "cloudant" %}
-{% set version = "2.9.0" %}
+{% set version = "2.10.2" %}
 {% set bundle = "tar.gz" %}
 {% set hash_type = "sha256" %}
-{% set hash = "db2650f605e9d4b5accbf9d15c990bc9568f87e1bef9c90b068f7b8b9d179cf3" %}
+{% set hash = "794c4715b75a812a95bb0c2d88f92a5f51ae4f537c3f6136ce273c7c1a4668ab" %}
 
 package:
   name: {{ name|lower }}
