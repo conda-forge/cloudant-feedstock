@@ -1,21 +1,17 @@
 {% set name = "cloudant" %}
-{% set version = "2.12.0" %}
-{% set bundle = "tar.gz" %}
-{% set hash_type = "sha256" %}
-{% set hash = "641b7fa47d0055fafcb712ba4435ae4bd8b60e88e52ac3328411817524f50c24" %}
+{% set version = "2.14.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.{{ bundle }}
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.{{ bundle }}
-  {{ hash_type }}: {{ hash }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: afb00331a6c8593ba849294e907ebf188ee90548b1b96d0ee98669ffeb5df320
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 
@@ -31,6 +27,10 @@ requirements:
 test:
   imports:
     - cloudant
+  commands:
+    - pip check
+  requires: 
+    - pip
 
 about:
   home: https://github.com/cloudant/python-cloudant
