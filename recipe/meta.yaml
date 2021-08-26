@@ -1,5 +1,5 @@
 {% set name = "cloudant" %}
-{% set version = "2.14.0" %}
+{% set version = "2.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: afb00331a6c8593ba849294e907ebf188ee90548b1b96d0ee98669ffeb5df320
+  sha256: ac2f5136e4f8fba5c838643603b5272c5cfb6ed2240edb580fe3c2c5a5fcda63
 
 build:
   noarch: python
@@ -16,7 +16,7 @@ build:
 
 
 requirements:
-  build:
+  host:
     - python >=3.6
     - pip
 
@@ -29,7 +29,7 @@ test:
     - cloudant
   commands:
     - pip check
-  requires: 
+  requires:
     - pip
 
 about:
@@ -37,7 +37,7 @@ about:
   license: Apache-2.0
   license_file: {{ RECIPE_DIR }}/LICENSE
   license_family: Apache
-  summary: 'Asynchronous Cloudant / CouchDB Interface'
+  summary: Asynchronous Cloudant / CouchDB Interface
   dev_url: https://github.com/cloudant/python-cloudant
   doc_url: https://python-cloudant.readthedocs.io/en/latest/
 
