@@ -1,0 +1,47 @@
+schema_version: 1
+
+context:
+  name: cloudant
+  version: "2.15.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: ac2f5136e4f8fba5c838643603b5272c5cfb6ed2240edb580fe3c2c5a5fcda63
+
+build:
+  number: 3
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - requests >=2.7.0,<3.0.0
+
+tests:
+  - python:
+      imports:
+        - cloudant
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Asynchronous Cloudant / CouchDB Interface
+  homepage: https://github.com/cloudant/python-cloudant
+  repository: https://github.com/cloudant/python-cloudant
+  documentation: https://python-cloudant.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - pmlandwehr
+    - jan-janssen
