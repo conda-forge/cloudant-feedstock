@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 
@@ -36,7 +36,7 @@ test:
 about:
   home: https://github.com/cloudant/python-cloudant
   license: Apache-2.0
-  license_file: {{ RECIPE_DIR }}/LICENSE
+  license_file: LICENSE
   license_family: Apache
   summary: Asynchronous Cloudant / CouchDB Interface
   dev_url: https://github.com/cloudant/python-cloudant
